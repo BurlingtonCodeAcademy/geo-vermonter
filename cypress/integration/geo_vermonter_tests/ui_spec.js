@@ -8,16 +8,14 @@ describe('Smoke Test', function () {
 describe('On initial page load', function () {
   before(() => cy.visit('/'));
 
-  it('the basic page elements should exist', function () {
-    ['#map', 'nav',
-      '#info', '#info #latitude', '#info #longitude',
-      '#info #county', '#info #town',
-      '#score',
-      'button#start', 'button#guess', 'button#quit'
-    ].forEach((selector) => {
-      it('Should have a ' + selector + ' element', function () {
-        cy.get(selector); // this will fail if the given element is missing
-      });
+  ['#map', 'nav',
+    '#info', '#info #latitude', '#info #longitude',
+    '#info #county', '#info #town',
+    '#score',
+    'button#start', 'button#guess', 'button#quit'
+  ].forEach((selector) => {
+    it('Should have a ' + selector + ' element', function () {
+      cy.get(selector); // this will fail if the given element is missing
     });
   });
 });
